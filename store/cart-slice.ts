@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-type CartItem = {
+export type CartItem = {
   id: string;
   title: string;
   price: number;
@@ -15,7 +15,7 @@ const initialState: CartState = {
   items: [],
 };
 
-export const cardSlice = createSlice({
+export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
@@ -40,3 +40,5 @@ export const cardSlice = createSlice({
     },
   },
 });
+
+export const { addToCart, removeFromCart } = cartSlice.actions;
